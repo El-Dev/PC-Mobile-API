@@ -1,0 +1,31 @@
+Pivotal Web Services - Doc
+..........
+Loging with Pivotal account: cf login (`Q1w2e3r) //or
+cf login -a api.run.pivotal.io
+..........
+Command:
+$ gradle build
+$ cf push my-application -p build/libs/my-application-version.jar
+
+or 
+
+$ mvn package
+$ cf push my-application -p target/my-application-version.jar
+..........
+cf push my-search-app -p build/libs/PriceSearch-0.0.1-SNAPSHOT.jar *Actual code
+..........
+
+
+Add to main() //Try without
+* extends SpringBootServletInitializer
+
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(applicationClass);
+	}
+
+	private static Class<PriceSearchApplication> applicationClass = PriceSearchApplication.class;
+	
+	//applicationClass = delaclaration of your class 
+	* SpringApplication.run(applicationClass, args);
+	
